@@ -43,7 +43,6 @@ public class UserServiceImpl implements UserService {
         UserDTO savedUserDTO = userMapper.getUserDTO(savedUser);
         log.info("{}",savedUserDTO.getUserId());
         return savedUserDTO;
-
     }
 
     @Override
@@ -52,7 +51,6 @@ public class UserServiceImpl implements UserService {
                 () -> new ResourceNotFoundException("User","userId",userId)
         );
         return userMapper.getUserDTO(user);
-
     }
 
     @Override
