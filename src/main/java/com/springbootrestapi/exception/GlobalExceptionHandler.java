@@ -36,7 +36,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {    
     @ExceptionHandler(EmailAlreadyExistException.class)
     public ResponseEntity<ErrorDetails> handleEmailAlreadyExistsException(EmailAlreadyExistException resourceNotFoundException,
                                                                         WebRequest webRequest){
-
+        System.out.println(resourceNotFoundException.getMessage());
         ErrorDetails errorDetails = new ErrorDetails(
                 LocalDateTime.now(),
                 resourceNotFoundException.getMessage(),
